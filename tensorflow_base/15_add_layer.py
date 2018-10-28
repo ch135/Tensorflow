@@ -26,14 +26,13 @@ prediction = add_layer(l1, 10, 1, activation_function=None)
 # 运算结果
 # reduction_indices：函数处理的维度。详见https://blog.csdn.net/qq_33096883/article/details/77479766
 loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediction), reduction_indices=[1]))
-result = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
+result = tf.train.GradientDescentOptimizer(0.2).minimize(loss)
 
 # 初始化所有变量
 init = tf.global_variables_initializer()
 
 with tf.Session() as sess:
     sess.run(init)
-
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.scatter(x_data, y_data)
@@ -41,7 +40,7 @@ with tf.Session() as sess:
     plt.show()
     for i in range(1000):
         sess.run(result, feed_dict={xs: x_data, ys: y_data})
-        if i % 50 == 0:
+        if i % 20 == 0:
             # print(sess.run(loss, feed_dict={xs: x_data, ys: y_data}))
             try:
                 ax.lines.remove(lines[0])
