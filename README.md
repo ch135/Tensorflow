@@ -7,9 +7,9 @@
 ### 1.2 过拟合解决方法
 - 增加数据量
 - 正则化初始数据
-- 惩罚机制
+- 惩罚机制<br/>
 ![](tensorflow_base/image/punish.png)
-- dropout
+- dropout<br/>
 ![](tensorflow_base/image/dropout_1.jpg)
 ![](tensorflow_base/image/dropout_2.jpg)
 ## 2.《Tensorflow实战  黄文坚》
