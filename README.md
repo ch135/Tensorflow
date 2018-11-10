@@ -10,11 +10,11 @@ tensorflow基础与实战
 <p>原理解析：http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_beginners.html</p>
 
 ### 1.2 过拟合解决方法
-<h4>增加数据量</h4>
-<h4>正则化初始数据</h4>
-<h4>惩罚机制</h4>
-<h4>dropout</h4>
-<br/>
+-<h4>增加数据量</h4>
+-<h4>正则化初始数据</h4>
+-<h4>惩罚机制</h4>
+-<h4>dropout</h4>
+-<br/>
 
 ## 2.《Tensorflow实战  黄文坚》
 
