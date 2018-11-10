@@ -10,9 +10,6 @@
 - 惩罚机制<br/>
 ![](tensorflow_base/image/punish.png)
 - dropout<br/>
-
-  在深度学习网络的训练过程中，对每层的神经元，按照一定概率将其暂时从网络中丢弃。
-  
 ![](tensorflow_base/image/dropout_1.jpg)
 ![](tensorflow_base/image/dropout_2.jpg)
 ## 2.《Tensorflow实战  黄文坚》
