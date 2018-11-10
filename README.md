@@ -8,13 +8,12 @@ tensorflow基础与实战
 
 ### 1.1 基于机器学习的数字识别
 <p>原理解析：http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_beginners.html</p>
-<br/>
 
 ### 1.2 过拟合解决方法
-<tr/><h3>增加数据量</h3>
-<tr/><h3>正则化初始数据</h3>
-<tr/><h3>惩罚机制</h3>
-<tr/><h3>dropout</h3>
+<tr/><h5>增加数据量</h5>
+<tr/><h5>正则化初始数据</h5>
+<tr/><h5>惩罚机制</h5>
+<tr/><h5>dropout</h5>
 <br/>
 
 ## 2.《Tensorflow实战  黄文坚》
