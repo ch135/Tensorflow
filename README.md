@@ -8,10 +8,8 @@
 - 增加数据量
 - 正则化初始数据
 - 惩罚机制
-![](tensorflow_base/image/pannish.png)
+![](tensorflow_base/image/punish.png)
 - dropout
-![](tensorflow_base/image/dropout_1.png)
-![](tensorflow_base/image/dropout_2.png)
+![](tensorflow_base/image/dropout_1.jpg)
+![](tensorflow_base/image/dropout_2.jpg)
 ## 2.《Tensorflow实战  黄文坚》
-
-
