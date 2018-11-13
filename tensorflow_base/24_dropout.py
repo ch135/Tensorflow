@@ -1,6 +1,12 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VESIBLE_DEVICES"] = "1"
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
 
 # 每次取一样的随机值
 tf.set_random_seed(1)
@@ -54,7 +60,7 @@ d_out = tf.layers.dense(d2, 1)
 d_loss = tf.losses.mean_squared_error(tf_y, d_out)
 d_train = tf.train.AdamOptimizer(LR).minimize(d_loss)
 
-sess = tf.Session()
+sess = tf.Session(config=config)
 init = tf.global_variables_initializer()
 sess.run(init)
 
