@@ -1,7 +1,6 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import  numpy as np
-import os
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from tensorflow.examples.tutorials.mnist import input_data
@@ -19,8 +18,6 @@ from tensorflow.examples.tutorials.mnist import input_data
             1)数据降噪
             2)可视化降维（PCA、TSNE）
 """
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 config = tf.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.5
 tf.set_random_seed(1)

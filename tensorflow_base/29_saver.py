@@ -57,13 +57,13 @@ def save():
     output = tf.layers.dense(layer1, 1)
     loss = tf.losses.mean_squared_error(output, tf_y)
     train_out = tf.train.GradientDescentOptimizer(0.5).minimize(loss)
+    saver = tf.train.Saver()
 
     sess = tf.Session()
     init = tf.global_variables_initializer()
     sess.run(init)
     for step in range(100):
         sess.run(train_out, {tf_x: x,tf_y: y})
-    saver = tf.train.Saver()
     saver.save(sess, "./DATA_save/params", write_meta_graph=False)
     # plotting
     out_, loss_ = sess.run([output, loss], {tf_x: x, tf_y: y})
@@ -79,9 +79,9 @@ def reload():
     layer1 = tf.layers.dense(tf_x, 10, tf.nn.relu)
     output = tf.layers.dense(layer1, 1)
     loss = tf.losses.mean_squared_error(output, tf_y)
+    saver = tf.train.Saver()
 
     sess = tf.Session()
-    saver = tf.train.Saver()
     saver.restore(sess, "./DATA_save/params")
     # plotting
     out_, loss_ = sess.run([output, loss], {tf_x: x, tf_y: y})

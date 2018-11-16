@@ -4,6 +4,14 @@ from tensorflow.examples.tutorials.mnist import input_data
 """
     @author: chen hao
     @time: 2018/11/1
+    @Content
+         1. Logistic Regression 和 Linear Regression 区别
+            Logistic Regression：把输出值映射到 softmax() 函数上，用于处理分类问题  
+            Linear Regression：输出是连续值，所以可用于处理回归问题
+            
+         2. Support Vector Regression 和 Support Vector Machine 区别
+            SVR：输出某个点到分类面的距离，是连续的，所以用于回归模型
+            SVM：点到面的距离用 sign() 函数作用，用于分类问题
 """
 mnist = input_data.read_data_sets("MNIST_data", one_hot=True)
 
@@ -21,10 +29,10 @@ def add_layer(inputs, in_size, out_size, activation_function=None):
 # 测试训练结果
 def comute_accuracy(v_xs, v_ys):
     global prediction
-    y_pre = sess.run(prediction, feed_dict={xs: v_xs}) #将测试集放入训练好的神经网络中训练，输出测试结果
+    y_pre = sess.run(prediction, {xs: v_xs}) #将测试集放入训练好的神经网络中训练，输出测试结果
     correct_prediction = tf.equal(tf.argmax(y_pre, 1), tf.argmax(v_ys, 1)) #tf.argmax()：输出某一维上最大数据的索引；判断测试值与实际值是否相等，输出布尔值
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) #tf.cast()将布尔值转化浮点数；并计算出平均值
-    result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys})
+    result = sess.run(accuracy, {xs: v_xs, ys: v_ys})
     return result
 
 xs = tf.placeholder(tf.float32, [None, 784]) #28*28
@@ -38,8 +46,8 @@ sess = tf.Session()
 sess.run(init)
 
 for i in range(1000):
-    batch_xs, batch_ys = mnist.train.next_batch(100)
-    sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys})
+    b_x, b_y = mnist.train.next_batch(100)
+    sess.run(train_step, {xs: b_x, ys: b_y})
     if i % 50 == 0:
         print(comute_accuracy(mnist.test.images, mnist.test.labels))
 

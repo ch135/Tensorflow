@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from tensorflow.examples.tutorials.mnist import input_data
 from sklearn.manifold import TSNE
-import os
 """
     # 设置最小GPU使用量
     config = tf.ConfigProto()
@@ -16,8 +15,6 @@ import os
     config.gpu_options.per_process_gpu_memory_fraction = 0.4 # 占用GPU40%的显存
     session = tf.Session(config=config)
 """
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 config = tf.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.5
 
